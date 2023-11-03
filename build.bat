@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
-docker build -t crashserver -f=dockerfiles/Dockerfile .
+@echo off
+docker build -t crashserver -f dockerfiles\Dockerfile .

@@ -1,8 +1,6 @@
-#!/bin/bash
-
-docker run crashserver 
-# wait a bit to let the container start
-sleep 2
-container_id=`docker ps -l -q`
-echo "server container id: $container_id"
-echo "to stop server run the following command: docker kill $container_id"
+@echo off
+docker run crashserver
+timeout /t 2 >nul
+for /f "tokens=*" %%i in ('docker ps -l -q') do set container_id=%%i
+echo server container id: %container_id%
+echo to stop server run the following command: docker kill %container_id%
