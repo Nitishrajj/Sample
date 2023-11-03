@@ -1,5 +1,5 @@
 @echo off
-docker run crashserver
+@REM docker run crashserver
 timeout /t 2 >nul
 for /f %%i in ('docker ps -l -q') do set container_id=%%i
 echo server container id: %container_id%
